@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Name and Noob</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f2f2f2;
+        color: #333;
+        transition: background-color 0.5s, color 0.5s;
+      }
+
+      body.dark-mode {
+        background-color: #333;
+        color: #f2f2f2;
+      }
+
+      #container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+      }
+
+      label {
+        font-size: 20px;
+        margin-bottom: 10px;
+      }
+
+      input {
+        padding: 5px;
+        margin-bottom: 20px;
+        width: 300px;
+        border: none;
+        border-radius: 5px;
+        box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+      }
+
+      .half-moon-button {
+        position: fixed;
+        bottom: 10px;
+        left: 10px;
+        width: 60px;
+        height: 30px;
+        border-radius: 0 0 50% 50%;
+        background-color: #f2f2f2;
+        border: 2px solid #333;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        transition: background-color 0.5s, color 0.5s;
+      }
+
+      .half-moon-button:hover {
+        background-color: #333;
+        color: #f2f2f2;
+      }
+
+      .moon-icon {
+        font-size: 36px;
+      }
+
+      #copyright {
+        position: fixed;
+        bottom: 10px;
+        right: 10px;
+        font-size: 12px;
+        color: #777;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="container">
+      <label for="name">Enter your name:</label>
+      <input type="text" id="name">
+      <button onclick="sayNameAndNoob()">Submit</button>
+
+      <p id="output"></p>
+    </div>
+
+    <div class="half-moon-button" onclick="toggleDarkMode()">
+      <i class="moon-icon fas fa-moon"></i>
+    </div>
+
+    <div id="copyright">
+      &copy; Pixel Mine 2023
+    </div>
+
+    <script src="https://kit.fontawesome.com/3a3b8f0d99.js"></script>
+    <script>
+      function sayNameAndNoob() {
+        // Get the value of the input element
+        const name = document.getElementById('name').value;
+
+        // Display the name and "noob" in the output element
+        const output = document.getElementById('output');
+        output.innerHTML = name + ' noob';
+      }
+
+      function toggleDarkMode() {
+        const body = document.getElementsByTagName('body')[0];
+        body.classList.toggle('dark-mode');
+      }
+    </script>
+  </body>
+</html>
